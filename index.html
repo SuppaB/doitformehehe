@@ -3,181 +3,182 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Roblox Donate - Support SupaBreynan</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
+  <title>Support SupaBreynan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
     * {
       box-sizing: border-box;
     }
 
-    body, html {
-      height: 100%;
+    body {
       margin: 0;
       font-family: 'Bungee', cursive, sans-serif;
-      overflow: hidden;
-      background: url('https://tr.rbxcdn.com/180DAY-4702686e63c4397ec7c0c50823fd8067/500/280/Image/Jpeg/noFilter'); /* Update with your Roblox group picture URL */
+      background: url('https://tr.rbxcdn.com/180DAY-4702686e63c4397ec7c0c50823fd8067/500/280/Image/Jpeg/noFilter') no-repeat center center fixed;
       background-size: cover;
-      background-position: center;
       color: #fff;
+      overflow-x: hidden;
     }
 
-    .background {
+    .overlay {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      filter: brightness(0.7) contrast(1.1);
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
       z-index: -1;
     }
 
     .container {
-      position: relative;
-      background: rgba(0, 0, 0, 0.75);
-      max-width: 420px;
-      margin: 5% auto 0 auto;
-      padding: 40px 30px 50px;
-      border-radius: 20px;
-      box-shadow: 0 0 35px rgba(255, 255, 255, 0.15);
+      max-width: 400px;
+      margin: 10vh auto;
+      padding: 30px 25px;
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 15px;
       text-align: center;
-      opacity: 0;
+      box-shadow: 0 0 30px #f1c40f80;
       animation: fadeIn 1.2s ease forwards;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(50px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
+    .avatar {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      background: url('https://tr.rbxcdn.com/30DAY-AvatarHeadshot-16FF6829E35D46990267D3EED9F4E72A-Png/150/150/AvatarHeadshot/Webp/noFilter') center/cover no-repeat;
+      border: 5px solid #ffd700;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #f39c12;
+    }
+
     h1 {
-      font-size: 2.8rem;
-      margin-bottom: 15px;
       color: #ffdd59;
-      text-shadow: 0 0 8px #f1c40f, 0 0 15px #f39c12;
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #f39c12;
     }
 
     p {
-      font-size: 1.15rem;
-      margin-bottom: 35px;
-      line-height: 1.4;
       color: #ddd;
+      font-size: 1rem;
+      margin-bottom: 30px;
+      line-height: 1.5;
       text-shadow: 0 0 6px #000;
     }
 
-      .avatar {
-     width: 130px;
-     height: 130px;
-     margin: 0 auto 30px; /* Center the avatar */
-     border-radius: 50%;
-     border: 4px solid #ffd700;
-     box-shadow: 0 0 15px #f39c12;
-     background-image: url('https://tr.rbxcdn.com/30DAY-AvatarHeadshot-16FF6829E35D46990267D3EED9F4E72A-Png/150/150/AvatarHeadshot/Webp/noFilter'); /* Updated with your avatar image URL */
-     background-position: center;
-     background-size: cover;
-     filter: drop-shadow(0 0 6px #f1c40f);
-   }
-   
-
     .donate-button {
-      font-size: 1.5rem;
-      color: #fff;
-      background: linear-gradient(45deg, #e63946, #f1faee);
-      padding: 15px 45px;
-      border-radius: 40px;
+      display: inline-block;
+      padding: 15px 35px;
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
       border: none;
+      border-radius: 40px;
+      font-size: 1.3rem;
+      color: white;
       cursor: pointer;
       text-decoration: none;
-      display: inline-block;
-      font-weight: 900;
-      box-shadow: 0 0 20px #e63946;
+      font-weight: bold;
+      box-shadow: 0 0 20px #ff416c;
       transition: all 0.3s ease;
-      opacity: 0;
-      animation: buttonAppear 1s ease forwards 1.0s;
-      user-select: none;
-      text-shadow: 0 0 5px #fff;
     }
 
     .donate-button:hover {
-      box-shadow: 0 0 28px #ff5f6d, 0 0 40px #ff5f6d;
-      background: linear-gradient(45deg, #ff5f6d, #f1faee);
-      transform: scale(1.08);
-      color: #000;
-      text-shadow: none;
-    }
-
-    @keyframes buttonAppear {
-      from { opacity: 0; transform: translateY(20px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-
-    @media (max-width: 480px){
-      .container {
-        margin-top: 15vh;
-        padding: 30px 20px 45px;
-      }
-
-      h1 {
-        font-size: 2.2rem;
-      }
-
-      .donate-button {
-        font-size: 1.3rem;
-        padding: 13px 30px;
-      }
-
-      .avatar {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 25px;
-      }
+      transform: scale(1.05);
+      background: linear-gradient(45deg, #ff4b2b, #ff416c);
+      box-shadow: 0 0 25px #ff6b6b;
     }
 
     .audio-player {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      opacity: 0.85;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 35px #ff4757a0;
-      background: rgba(0,0,0,0.5);
-      z-index: 20;
+      background: rgba(0,0,0,0.6);
+      border-radius: 10px;
+      padding: 5px;
+      box-shadow: 0 0 25px #ff4757a0;
+      z-index: 10;
+    }
+
+    #visitor-count {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: #ffdd59;
+      text-shadow: 0 0 8px #000;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 8vh 20px;
+        padding: 25px 20px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .donate-button {
+        font-size: 1.1rem;
+        padding: 12px 28px;
+      }
+
+      .avatar {
+        width: 90px;
+        height: 90px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="background"></div>
+  <div class="overlay"></div>
 
-  <main class="container" role="main" aria-label="Donate Robux Support">
+  <main class="container" role="main">
     <div class="avatar" aria-label="SupaBreynan Roblox Avatar"></div>
     <h1>Support SupaBreynan!</h1>
-    <p>Click the button below to donate Robux and help support my creations. Every bit counts!</p>
+    <p>Click below to donate Robux and help me grow. Every bit helps!</p>
     <a class="donate-button" href="https://www.roblox.com/games/3195056186/DONATE#!/store" target="_blank" onclick="startConfetti(); playSound()">🎮 Donate Robux</a>
+    <p id="visitor-count">Visitors: Loading...</p>
   </main>
 
   <div class="audio-player">
-    <audio controls autoplay loop preload="auto" title="Background music for Roblox">
+    <audio controls autoplay loop>
       <source src="https://cdn.pixabay.com/download/audio/2021/10/10/audio_0bdf71c505.mp3?filename=electronic-chill-out-background-music-11002.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
   </div>
 
-  <audio id="confetti-sound" src="https://example.com/your-confetti-sound.mp3" preload="auto"></audio> <!-- Add your confetti sound URL here -->
+  <!-- Sound for button click -->
+  <audio id="confetti-sound" src="https://cdn.pixabay.com/download/audio/2022/03/23/audio_d845a29c02.mp3?filename=click-button-124467.mp3" preload="auto"></audio>
 
   <script>
     function startConfetti() {
       confetti({
-        particleCount: 200,
-        spread: 80,
+        particleCount: 180,
+        spread: 70,
         origin: { y: 0.6 }
       });
     }
 
     function playSound() {
       const sound = document.getElementById('confetti-sound');
-      sound.currentTime = 0; // Reset sound to start
+      sound.currentTime = 0;
       sound.play();
     }
-  </script>
 
+    // Visitor Counter using CountAPI
+    const counterElement = document.getElementById("visitor-count");
+    const namespace = "supabreynan_site";
+    const key = "visits";
+
+    fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+      .then(res => res.json())
+      .then(data => {
+        counterElement.textContent = `Visitors: ${data.value}`;
+      })
+      .catch(() => {
+        counterElement.textContent = "Visitors: unavailable";
+      });
+  </script>
 </body>
 </html>
